@@ -1,0 +1,28 @@
+.pic {
+    height: 20px;
+    width: 20px;
+}
+.team {
+    border-radius: 100px;
+    height: 100px;
+}
+.our {
+    text-align: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    color: gray;
+}
+
+.col {
+    color: gray;
+    text-align: center;
+}
+.slant {
+    font-family: 'Crete Round', serif;
+    font-weight: normal;
+    font-size: 14px;
+}
+.social {
+    border:2px solid black;
+    border-radius: 50%;
+}

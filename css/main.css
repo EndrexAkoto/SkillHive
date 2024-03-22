@@ -1,0 +1,81 @@
+/* body{
+    background-image: url(../images/79229914-african-business-lady-smiling-working-at-laptop-over-white-background-.jpg);
+    background-size: 200vh;
+} */
+.logo{
+    width:150px;
+}
+
+/* .navbar-nav{
+    margin-left:450px;
+    
+} */
+.navbar{ 
+    background-color: white !important;
+}
+li{
+    padding:5px;
+    color:black;
+}
+.plank{
+    background-color: rgb(240, 240, 240);
+    padding-top: 5px;
+    padding-bottom: 40px;
+    
+}
+
+/* a{
+    color:black;
+} */
+
+/* styling first section  */
+#hero {
+    background-image: url('../images/img-1.jpg');
+    background-size:cover;
+    height: 43.125rem;   
+}
+.but{
+    background-color: brown;
+    width:150px;
+    height:40px;
+    border-radius:20px;
+    border:none;
+    color:white;
+    margin-left:80px;
+    margin-top:30px;
+}
+.professional{
+    /* padding-top: 200px; */
+}
+.prof{
+    font-family: 'Crete Round', serif;
+}
+a:active {
+    /* background-color: blue; */
+    border-radius:5px;
+    color: #ffffff !important;
+    background-color: #f56363 !important;
+}
+    
+
+
+
+
+
+
+
+
+/* .navbar.overall{
+    background-color: white;
+} */
+
+/* .second{
+    background-color: white;
+    width:100%;
+    height:400px;
+} */
+
+
+
+   
+

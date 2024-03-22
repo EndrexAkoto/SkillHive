@@ -1,0 +1,123 @@
+body{
+    font-family: "Bai Jamjuree", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.yelp{
+    border: 2px solid rgb(221, 217, 217) !important;
+    border-radius: 15px;
+    background-color: rgb(211, 211, 211);
+}
+.yelp:hover {
+    background-color: pink;
+    border: 2px solid crimson !important;
+}
+form{
+    margin: 120px !important;
+    padding: none !important;
+}
+.rented{
+    padding: none !important;
+    margin: none !important;
+}
+.row{
+    margin-top: 50px !important;
+   /* margin-left: -15px;
+     margin-right: -15px; */
+    font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;;
+}
+.style{
+    font: bold;
+    font-size: 35px;
+}
+.recal{
+    padding: 40px;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: space-between;
+}
+.tribe {
+    color: white !important;
+    /* font-family: sans-serif; */
+    background-color: crimson;
+    padding: 6px 25px;
+    font-size: 13px;
+    border: none;
+}
+.tribe:hover {
+    background-color: black;
+    color: white;
+} 
+.section{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.bg-lightgray{
+    background-color: rgb(240, 239, 239);
+    background-size: cover;
+}
+.funfacts{
+    color: rgb(73, 73, 73)
+}
+.section{
+    margin-top: 50px;
+}
+.container3{
+    margin-top: 70px;
+}
+ .container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+} 
+.hi{
+    text-align: end;
+    border: none;
+}
+.tribe1{
+    padding: 10px 30px;
+    background-color: rgb(196, 42, 42);
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-family: sans-serif;
+}
+.tribe1:hover{
+    background-color: black;
+    color: white;
+    margin-left: auto;
+}
+.list-type{
+    list-style: none;
+    line-height: 35px;   
+}
+.list-type a{
+    color: rgb(5, 14, 15);
+}
+.resize{
+    height: 30px;
+    width: 90px;
+    padding: 2px;
+}
+.ripe{
+    margin-top: 10px;
+}
+.day{
+    height: 35px;
+    width: 35px;
+    padding: 6px;
+    /* border: 2px solid black;
+
+    border-radius: 60px; */
+}
+.bg-dark{
+    font-size: 15px;
+    background-color: rgb(5, 14, 15);
+}
+.cold{
+    line-height: 60px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+
+}

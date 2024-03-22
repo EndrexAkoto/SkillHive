@@ -1,0 +1,34 @@
+.but1{
+    border-radius: 100%;
+    background-color: rgb(236, 86, 111);
+    border: 0px;
+    padding: 5px 20px 5px 20px;
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+    align-content: center;
+    
+}
+.text1{
+    margin-left: 60px;
+    align-self: center;
+    margin-top: 90px;
+}
+.pix1{
+    margin-top: 90px;
+}
+.pix2{
+    margin-left: 100px;
+}
+.learn a{
+    list-style: none;
+    text-decoration: none !important;
+}
+.Learn{
+    /* text-decoration: none; */
+    color:  rgb(236, 86, 111);
+}
+.Awesome{
+    margin-top: 50px;
+    text-align: center;
+}
