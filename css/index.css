@@ -26,11 +26,10 @@
 }
 .linked a{
     text-decoration: none;
-    
 }
-a img {
-    text-decoration: none !important;
-}
+/* .team_socials a {
+    text-decoration: none;
+} */
 .learn a{
     list-style: none;
     text-decoration: none !important;
