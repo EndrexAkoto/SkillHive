@@ -1,15 +1,11 @@
-/* body{
-    background-image: url(../images/79229914-african-business-lady-smiling-working-at-laptop-over-white-background-.jpg);
-    background-size: 200vh;
-} */
 .logo{
     width:150px;
 }
 
-/* .navbar-nav{
+.navbar-nav{
     margin-left:450px;
     
-} */
+}
 .navbar{ 
     background-color: white !important;
 }
@@ -24,9 +20,9 @@ li{
     
 }
 
-/* a{
+a{
     color:black;
-} */
+}
 
 /* styling first section  */
 #hero {
