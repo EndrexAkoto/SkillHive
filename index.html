@@ -19,89 +19,53 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="fontawe/css/font-awesome.min.css">
     <style>
-        /* Style for the login button on hover */
+/* Style for the login button on hover */
         #loginButton:hover {
             background-color: #0056b3; /* Darker blue on hover */
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add box-shadow */
         }
     </style>
 </head>
-</head>
+
 <body>
 <!--Navbar-->
-    <div class="container-fluid p-0">
-        <section id="hero">
-            <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top">
-                 <a class="navbar-brand" href="#"></a>
-                <a class="navbar-brand pl-5" href="#"><img src="images/logo.png" class="logo"><span>SKILLHIVE</span></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#features">Portfolio<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#services">Explore<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#team">Team<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact<span class="sr-only">(current)</span></a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#contact">Sign Up<span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Login<span class="sr-only">(current)</span></a>
-                        </li> -->
-                    </ul>
-                </div>
-                <button type="button" id="loginButton" class="btn btn-primary">
-                    Login
-                  </button>
-                  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <!-- Login form -->
-                          <form id="loginForm">
-                            <div class="form-group">
-                              <label for="email">Email address</label>
-                              <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="form-group">
-                              <label for="password">Password</label>
-                              <input type="password" class="form-control" id="password" required>
-                            </div>
-                            <!-- The Submit button -->
-                            <button type="submit" class="btn btn-primary">Login</button>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </nav>
-        </section>
-    </div>
-    
-    
-    
-          
+<div class="container-fluid p-0">
+    <section id="hero">
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top">
+            <a class="navbar-brand" href="#"><img src="images/logo.png" class="logo"><span>SKILLHIVE</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <!-- Second section beginning -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Portfolio<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Explore<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+ <!-- Adjusted Placement for Buttons -->
+                <div class="flex-row ml-auto">
+                    <a href="./signUp.html" class="btn btn-primary mr-2">Sign Up</a>
+                    <a href="./login.html" class="btn btn-success">Login</a>
+                </div>  
+            </div>
+        </nav>
+    </section>
+</div>
+
+ <!-- Second section beginning -->
         <div id="features">
             <h2 class="Awesome"><b>We Are Your Creative Hub</b></h2>
         </div>
@@ -110,8 +74,6 @@
             <div class="col-sm-12 col-xl-6">
                 <div class="text1">
                 <button class="but1"><b>1</b></button>
-                <br>
-                <br>
                 <h3>Front-End Web Development</h3>
                 <br>
                 <p>A Front-End Web Development portfolio is not just a showcase of projects; <br>
@@ -122,19 +84,13 @@
                     design, and innovation.</p>
                     <p>In essence, it's the digital footprint of a developer's commitment <br>
                     to pushing the boundaries of the web.</p>
-                    
-                           <br>
-            </div>
+        </div>
             </div>
             <div class="col-sm-12 col-xl-6">
                 <img style="height: 80%; width: 80%;" src="./images/mac.jpg" alt="" class="pix1">
             </div>
         </div>
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
       
         <div class="container">
         <div class="row">
@@ -144,15 +100,12 @@
             <div class="col-sm-12 col-xl-6">
                 <div class="text2">
                     <button class="but1"><b>2</b></button>
-                    <br>
-                    <br>
                     <h2>UI/UX Design</h2>
                     <br>
                     <p>A UI/UX Design portfolio demonstrates a designer's expertise in creating user-friendly digital experiences by merging aesthetics with functionality. <br>
                         Each project showcases problem-solving skills, strategic design approach, and successful outcomes that prioritize user satisfaction. <br>
                         It goes beyond aesthetics to address user needs and business goals, reflecting the designer's commitment to enhancing user experience.
-                    </p>                        
-                        
+                    </p>                           
                     <br>
                     <a href="#">
                     </a>
@@ -165,8 +118,6 @@
             <div class="col-sm-12 col-xl-6">
                 <div class="text1">
                 <button class="but1"><b>3</b></button>
-                <br>
-                <br>
                 <h3>Back-End Web Development</h3>
                 <br>
                 <p>A Back-End Web Development portfolio demonstrates a developer's prowess in building <br>
@@ -178,8 +129,7 @@
                     <p>This portfolio is a reflection of a developer's commitment to backend excellence, <br>
                     emphasizing their role in creating the unseen yet critical infrastructure that <br>
                     supports user-facing applications.</p>
-                    
-                           <br>
+                     <br>
             </div>
             </div>
             <div class="col-sm-12 col-xl-6">
@@ -495,66 +445,66 @@
             </div>
         </div>
     </section>
-    
-<div id="contact">
-<footer class="bg-lightgray footer">
-    <div class="container">
-        <div class="row recal">
-            <div>
-                <img src="./images/logo.png" alt="" class="resize">
-                <p><p>A portfolio website merges creativity with 
-                    <br>professionalism to showcase skills, 
-                    <br>accomplishments, and craft a unique narrative,
-                     <br>serving personal branding.</p>
-            </p>
-            </div>
-            <div class="hills">
-                <ul class="list-type">
-                    <li>
-                        <h4><b>Explore Leading Creatives</b></h4>
-                    </li>
-                    <li>
-                        <a href="">Front-End Web Development</a>
-                    </li>
-                    <li>
-                        <a href="">UI/UX Design</a>
-                    </li>
-                    <li>
-                        <a href="">Back-End Web Development</a>
-                    </li>
-                    <li>
-                        <a href="">Data Analytics</a>
-                    </li>
-                    <li>
-                        <a href="">AWS Cloud Computing</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="hills ml-auto">
-                <ul class="list-type">
-                    <li>
-                        <h4><b>Useful Links</b></h4>
-                    </li>
-                    <li>
-                        <a href="">About Us</a>
-                    </li>
-                    <li>
-                        <a href="">Help & Support</a>
-                    </li>
-                    <li>
-                        <a href="">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="">Terms & Conditions</a>
-                    </li>
-                    <li>
-                        <a href="">FAQ</a>
-                    </li>
-                </ul>
+
+    <footer class="bg-lightgray footer">
+        <div class="container">
+            <div class="row recal">
+                <div>
+                    <img src="./images/logo.png" alt="" class="resize">
+                    <p><p>A portfolio website merges creativity with 
+                        <br>professionalism to showcase skills, 
+                        <br>accomplishments, and craft a unique narrative,
+                         <br>serving personal branding.</p>
+                </p>
+                </div>
+                <div class="hills">
+                    <ul class="list-type">
+                        <li>
+                            <h4><b>Explore Leading Creatives</b></h4>
+                        </li>
+                        <li>
+                            <a href="">Front-End Web Development</a>
+                        </li>
+                        <li>
+                            <a href="">UI/UX Design</a>
+                        </li>
+                        <li>
+                            <a href="">Back-End Web Development</a>
+                        </li>
+                        <li>
+                            <a href="">Data Analytics</a>
+                        </li>
+                        <li>
+                            <a href="">AWS Cloud Computing</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hills">
+                    <ul class="list-type">
+                        <li>
+                            <h4><b>Useful Links</b></h4>
+                        </li>
+                        <li>
+                            <a href="">About Us</a>
+                        </li>
+                        <li>
+                            <a href="">Help & Support</a>
+                        </li>
+                        <li>
+                            <a href="">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-            
-</footer>
+    </footer>
+    
 
 
 <div class="footer-down bg-dark m-0 "> 
@@ -564,7 +514,6 @@
     </div>
 </div>
 </div>
-<!-- end of prricing & contact -->
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
