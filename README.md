@@ -19,8 +19,6 @@ Interactive visualization of project statistics and achievements.
 
 **To Clone the repository:**
 
-```bash
-
 git clone https://github.com/SkillHive/skillhive.git
 
 **Install dependencies:**
@@ -30,7 +28,7 @@ npm install
 node app.js
 To preview locally in your browser, visit http://localhost:3000/.
 
-##Usage
+## Usage
 
 Sign up or log in to access your dashboard.
 Create and customize your personal portfolio.
@@ -38,15 +36,18 @@ Add projects, skills, and experiences to your portfolio.
 Collaborate with team members to create collective project sections.
 Explore and navigate through the portfolios of other team members.
 
-##Screenshots
+## Screenshots
+
 Add screenshots here to showcase the user interface of your platform.
 
-##Contributors
+## Contributors
+
 Martin Akoto - https://github.com/EndrexAkoto/SkillHive
 Edidiong Obiora - https://github.com/BibiObiora/SkillHive
 Emmanuel Abia - https://github.com/otunba32/SkillHive
 
-##Technologies Used
+## Technologies Used
+
 **Backend:**
 
 Node.js
@@ -60,14 +61,18 @@ CSS
 JavaScript
 Bootstrap
 
-##Contributions
+## Contributions
+
 Contributions are welcome! If you have ideas for improvement or find any issues, please open an issue or submit a pull request.
 
-##License
+## License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-##Acknowledgments
+## Acknowledgments
+
 We would like to thank our team members for their cooperation throughout the development of SkillHive.
 
+```
 
 ```
