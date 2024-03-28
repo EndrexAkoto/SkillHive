@@ -21,17 +21,18 @@ git clone https://github.com/YourTeamName/skillhive.git
 Install dependencies:
 
 bash
-Copy code
+
 npm install
 Run the server:
 
 bash
-Copy code
+
 node app.js
 To preview locally in your browser visit:
 http://localhost:3000/
 
 Usage
+
 Sign up or log in to access your dashboard.
 Create and customize your personal portfolio.
 Add projects, skills, and experiences to your portfolio.
@@ -64,3 +65,27 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Acknowledgments
 We would like to thank [Instructor/Team Lead Name] for their guidance and support throughout the development of SkillHive.
 
+Acknowledgments
+We would like to thank [Instructor/Team Lead Name] for their guidance and support throughout the development of SkillHive.
+dghjjj hhjjkkk hhhjkkl dghuikm
+dfgghk,,
+fghhjjj
+
+HTML
+CSS
+JavaScript
+Bootstrap
+Contributions
+Contributions are welcome! If you have ideas for improvement or find any issues, please open an issue or submit a pull request.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgments
+We would like to thank [Instructor/Team Lead Name] for their guidance and support throughout the development of SkillHive.
+
+Acknowledgments
+We would like to thank [Instructor/Team Lead Name] for their guidance and support throughout the development of SkillHive.
+dghjjj hhjjkkk hhhjkkl dghuikm
+dfgghk,,
+fghhjjj
