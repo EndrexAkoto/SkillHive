@@ -1,0 +1,21 @@
+{
+  "name": "skillhive",
+  "version": "1.0.0",
+  "description": "A portfolio project called SkillHive.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "portfolio",
+    "web development",
+    "SkillHive"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  }
+}
