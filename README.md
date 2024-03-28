@@ -19,8 +19,6 @@ Interactive visualization of project statistics and achievements.
 
 **To Clone the repository:**
 
-```bash
-
 git clone https://github.com/SkillHive/skillhive.git
 
 **Install dependencies:**
@@ -69,5 +67,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ##Acknowledgments
 We would like to thank our team members for their cooperation throughout the development of SkillHive.
 
+```
 
 ```
