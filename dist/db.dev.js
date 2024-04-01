@@ -1,6 +1,5 @@
 "use strict";
 
-// db.js
 // Import the required SQLite module
 var sqlite3 = require('sqlite3').verbose(); // Connect to the SQLite database file
 
