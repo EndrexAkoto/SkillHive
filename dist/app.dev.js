@@ -1,153 +1,108 @@
 "use strict";
 
 // Import necessary modules
+require('dotenv').config();
+
 var express = require('express');
+
+var path = require('path');
+
+var sqlite3 = require('sqlite3').verbose();
 
 var bcrypt = require('bcrypt');
 
-var sqlite3 = require('sqlite3').verbose(); // Initialize Express
+var saltRounds = 10; // Initialize Express
 
+var app = express(); // Serve static files from the root directory
 
-var app = express();
-app.use(express.json()); // Middleware to parse JSON bodies
-// Connect to the SQLite database
+app.use(express["static"](path.join(__dirname))); // Connect to the SQLite database file
 
-var db = new sqlite3.Database('./database.db', sqlite3.OPEN_READWRITE, function (err) {
+var dbPath = process.env.DATABASE_PATH || './database.db';
+var db = new sqlite3.Database(dbPath, function (err) {
   if (err) {
-    console.error('Error connecting to the database:', err.message);
+    console.error('Error connecting to database:', err.message);
   } else {
-    console.log('Connected to the database.'); // Ensure the users table exists
-
-    db.run("CREATE TABLE IF NOT EXISTS users (\n            id INTEGER PRIMARY KEY AUTOINCREMENT,\n            username TEXT NOT NULL UNIQUE,\n            email TEXT NOT NULL UNIQUE,\n            password TEXT NOT NULL\n        )", function (createErr) {
-      if (createErr) {
-        console.error('Error creating users table:', createErr.message);
-      } else {
-        console.log('Users table created successfully.');
-      }
-    });
+    console.log('Connected to the database.');
   }
-}); // User Registration Endpoint
+}); // Parse JSON and URL-encoded request bodies
 
-app.post('/register', function _callee(req, res) {
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+})); // Route to handle user registration (signup)
+
+app.post('/signup', function _callee(req, res) {
   var _req$body, username, email, password, hashedPassword, sql;
 
   return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          _context.prev = 0;
-          _req$body = req.body, username = _req$body.username, email = _req$body.email, password = _req$body.password; // Validate input
+          _req$body = req.body, username = _req$body.username, email = _req$body.email, password = _req$body.password;
+          _context.next = 3;
+          return regeneratorRuntime.awrap(bcrypt.hash(password, saltRounds));
 
-          if (!(!username || !email || !password)) {
-            _context.next = 4;
-            break;
-          }
-
-          return _context.abrupt("return", res.status(400).send({
-            error: "Username, email, and password are required."
-          }));
-
-        case 4:
-          _context.next = 6;
-          return regeneratorRuntime.awrap(bcrypt.hash(password, 10));
-
-        case 6:
+        case 3:
           hashedPassword = _context.sent;
-          sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+          sql = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
           db.run(sql, [username, email, hashedPassword], function (err) {
             if (err) {
-              console.error('Error registering user:', err.message);
-              return res.status(400).send({
-                error: "User already exists with that email."
+              console.error('Error inserting user data:', err.message);
+              return res.status(500).json({
+                message: 'Failed to register user'
               });
             }
 
-            res.send({
-              message: "User registered successfully!",
-              userId: this.lastID
-            });
-          });
-          _context.next = 15;
-          break;
+            console.log('User registered successfully!'); // Redirect the user to the login page after successful signup
 
-        case 11:
-          _context.prev = 11;
-          _context.t0 = _context["catch"](0);
-          console.error('Error registering user:', _context.t0.message);
-          res.status(500).send({
-            error: "Internal server error."
+            res.redirect('/login.html'); // Ensure the path matches your file structure
           });
 
-        case 15:
+        case 6:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[0, 11]]);
-}); // User Login Endpoint
+  });
+}); // Route to handle user login
 
 app.post('/login', function (req, res) {
   var _req$body2 = req.body,
       email = _req$body2.email,
       password = _req$body2.password;
-  var sql = "SELECT * FROM users WHERE email = ?";
-  db.get(sql, [email], function _callee2(err, user) {
-    var isPasswordValid;
-    return regeneratorRuntime.async(function _callee2$(_context2) {
-      while (1) {
-        switch (_context2.prev = _context2.next) {
-          case 0:
-            if (!err) {
-              _context2.next = 3;
-              break;
-            }
+  var sql = 'SELECT * FROM users WHERE email = ?';
+  db.get(sql, [email], function (err, user) {
+    if (err) {
+      console.error('Error fetching user:', err.message);
+      return res.status(500).json({
+        message: 'Error logging in'
+      });
+    }
 
-            console.error('Error retrieving user:', err.message);
-            return _context2.abrupt("return", res.status(400).send({
-              error: "Invalid email or password."
-            }));
-
-          case 3:
-            if (user) {
-              _context2.next = 5;
-              break;
-            }
-
-            return _context2.abrupt("return", res.status(404).send({
-              error: "User not found."
-            }));
-
-          case 5:
-            _context2.next = 7;
-            return regeneratorRuntime.awrap(bcrypt.compare(password, user.password));
-
-          case 7:
-            isPasswordValid = _context2.sent;
-
-            if (isPasswordValid) {
-              _context2.next = 10;
-              break;
-            }
-
-            return _context2.abrupt("return", res.status(401).send({
-              error: "Invalid email or password."
-            }));
-
-          case 10:
-            res.send({
-              message: "Login successful!"
-            });
-
-          case 11:
-          case "end":
-            return _context2.stop();
+    if (user) {
+      bcrypt.compare(password, user.password, function (err, result) {
+        if (result) {
+          // Passwords match
+          console.log('Authentication successful');
+          res.redirect('/dashboard.html'); // Adjust according to your file structure
+        } else {
+          // Passwords don't match
+          console.log('Authentication failed');
+          res.status(401).json({
+            message: 'Authentication failed'
+          });
         }
-      }
-    });
+      });
+    } else {
+      // No user found
+      res.status(404).json({
+        message: 'User not found'
+      });
+    }
   });
 }); // Start the server
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 app.listen(PORT, function () {
   console.log("Server is running on port ".concat(PORT));
 });

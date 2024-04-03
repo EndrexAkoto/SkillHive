@@ -1,5 +1,5 @@
 .logo{
-    width:150px;
+    width:10px;
 }
 
 .navbar-nav{
@@ -25,10 +25,10 @@ a{
 }
 
 /* styling first section  */
-#hero {
-    background-image: url('../images/img-1.jpg');
+#hero{
+    background-image: url('../images/navbar.png');
     background-size:cover;
-    height: 43.125rem;   
+    height: 39.125rem;   
 }
 .but{
     background-color: brown;
@@ -63,8 +63,9 @@ a:active {
 
  .navbar.overall{
     background-color: white;
-} */
-
+}
+ /* 
+ */
  */
     background-color: white;
     width:100%;

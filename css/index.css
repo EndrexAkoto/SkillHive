@@ -70,3 +70,10 @@
 .resize {
     width: 100px; /* Adjust the width as needed */
 }
+.navbar bottom
+font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  background-color: #b2dbec;
