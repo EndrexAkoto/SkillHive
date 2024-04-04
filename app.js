@@ -39,7 +39,7 @@ app.post('/signup', async (req, res) => {
         }
         console.log('User registered successfully!');
         // Redirect the user to the login page after successful signup
-        res.redirect('/login.html'); // Ensure the path matches your file structure
+        res.redirect('/login.html'); 
     });
 });
 
@@ -58,7 +58,7 @@ app.post('/login', (req, res) => {
                 if (result) {
                     // Passwords match
                     console.log('Authentication successful');
-                    res.redirect('/dashboard.html'); // Adjust according to your file structure
+                    res.redirect('/index.html'); // Adjust according to your file structure
                 } else {
                     // Passwords don't match
                     console.log('Authentication failed');

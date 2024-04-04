@@ -2,5 +2,6 @@
     "liveServer.settings.port": 5567,
     "mos.port": "",
     "compile-hero.disable-compile-files-on-did-save-code": false,
-    "sqltools.useNodeRuntime": true
+    "sqltools.useNodeRuntime": true,
+    "iis.configDir": ""
 }
