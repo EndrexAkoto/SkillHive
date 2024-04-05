@@ -1,6 +1,0 @@
--- database: c:\Users\AKOTO\VS code local\SkillHive\database.db
-
--- Use the ▷ button in the top right corner to run the entire file.
-
-SELECT * FROM users
-ORDER BY `id` DESC;
