@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Form</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <form id="portfolioForm" action="/submit-portfolio" method="POST" enctype="multipart/form-data">
+        <section class="personal-info">
+            <h2>About</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+            <label for="degree">Degree:</label>
+            <input type="text" id="degree" name="degree">
+            <label for="job">Job:</label>
+            <input type="text" id="job" name="job">
+            <label for="photo">Photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+        </section>
+        
+        <section class="skills">
+            <h2>Skill</h2>
+            <!-- You can replicate this for multiple skills or use JavaScript to dynamically add more fields -->
+            <label for="skill1">Skill 1:</label>
+            <input type="text" id="skill1" name="skill1">
+        </section>
+        
+        <section class="education-work">
+            <h2>Education & Work Experience</h2>
+            <!-- Similarly, add multiple entries for education and work experience as needed -->
+            <label for="education1">Education 1:</label>
+            <input type="text" id="education1" name="education1">
+            <label for="work1">Work Experience 1:</label>
+            <input type="text" id="work1" name="work1">
+        </section>
+        
+        <section class="contact">
+            <h2>Contact</h2>
+            <label for="contactEmail">Contact Email:</label>
+            <input type="email" id="contactEmail" name="contactEmail" required>
+            <label for="contactPhone">Contact Phone:</label>
+            <input type="tel" id="contactPhone" name="contactPhone" required>
+        </section>
+        
+        <button type="submit">Submit Portfolio</button>
+    </form>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
