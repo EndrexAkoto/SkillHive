@@ -17,7 +17,7 @@ SkillHive is a platform where we showcase our individual and collective growth a
 
 **To Clone the repository:**
 
-git clone https://github.com/SkillHive/skillhive.git
+git clone https://github.com/EndrexAkoto/SkillHive.git
 
 **Install dependencies:**
 
@@ -25,7 +25,7 @@ git clone https://github.com/SkillHive/skillhive.git
 
 **Runing the server:**
 
-- Yarn-dev
+- Yarn dev
 - To preview locally in your browser, visit http://localhost:3000/.
 
 ## Usage
@@ -57,6 +57,7 @@ git clone https://github.com/SkillHive/skillhive.git
 - CSS
 - JavaScript
 - Bootstrap
+*  Scss & Less
 
 ## Contributions
 
