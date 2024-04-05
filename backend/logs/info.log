@@ -67,3 +67,6 @@
 2024-04-05 03:02:57 warn: "User already exists"
 2024-04-05 03:03:02 info: "Registering user: {\"firstName\":\"sample\",\"lastName\":\"1\",\"email\":\"sample1@gmail.com\",\"password\":\"123456789\"}"
 2024-04-05 03:03:02 warn: "User already exists"
+2024-04-05 04:56:19 info: "main Server is running on port 2345"
+2024-04-05 04:56:19 info: "Redis is connected successfully to the server"
+2024-04-05 04:56:19 info: "MongoDB database skillhive is connected successfully to the server"
