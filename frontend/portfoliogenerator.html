@@ -3,58 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Form</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <title>Professional Portfolio Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="email"], input[type="tel"], textarea, select, input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .image-upload-container {
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: auto;
+        }
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .profile-photo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .profile-photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0; /* Initially hide the overlay */
+    transition: opacity 0.3s ease-in-out; /* Add smooth transition effect */
+}
+
+.image-upload-container:hover .profile-photo-overlay {
+    opacity: 1; /* Show overlay when hovering over the container */
+}
+
+.profile-photo-overlay input[type="file"] {
+    display: none;
+}
+
+        }
+        .skill-input input, .education-input input, .experience-input input, .course-input input {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
-    <form id="portfolioForm" action="/submit-portfolio" method="POST" enctype="multipart/form-data">
-        <section class="personal-info">
-            <h2>About</h2>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="birthday">Birthday:</label>
-            <input type="date" id="birthday" name="birthday" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required>
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" required>
-            <label for="degree">Degree:</label>
-            <input type="text" id="degree" name="degree">
-            <label for="job">Job:</label>
-            <input type="text" id="job" name="job">
-            <label for="photo">Photo:</label>
-            <input type="file" id="photo" name="photo" accept="image/*">
-        </section>
-        
-        <section class="skills">
-            <h2>Skill</h2>
-            <!-- You can replicate this for multiple skills or use JavaScript to dynamically add more fields -->
-            <label for="skill1">Skill 1:</label>
-            <input type="text" id="skill1" name="skill1">
-        </section>
-        
-        <section class="education-work">
-            <h2>Education & Work Experience</h2>
-            <!-- Similarly, add multiple entries for education and work experience as needed -->
-            <label for="education1">Education 1:</label>
-            <input type="text" id="education1" name="education1">
-            <label for="work1">Work Experience 1:</label>
-            <input type="text" id="work1" name="work1">
-        </section>
-        
-        <section class="contact">
-            <h2>Contact</h2>
-            <label for="contactEmail">Contact Email:</label>
-            <input type="email" id="contactEmail" name="contactEmail" required>
-            <label for="contactPhone">Contact Phone:</label>
-            <input type="tel" id="contactPhone" name="contactPhone" required>
-        </section>
-        
-        <button type="submit">Submit Portfolio</button>
-    </form>
+<div class="container">
+    <h2>Create Your Professional Portfolio</h2>
+    <form onSubmit="handleSubmit(event)">
+        <div class="image-upload-container">
+            <img class="profile-photo" id="profilePhoto" src="placeholder.png" alt="Profile Photo">
+            <div class="profile-photo-overlay">
+                <label for="imageUpload">Upload Photo</label>
+                <input type="file" id="imageUpload" name="profilePicture" accept="image">
+            </div>
+        </div>
 
-    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+        <input type="text" id="name" name="name" placeholder="Your Name">
+        <input type="text" id="profession" name="profession" placeholder="Your Profession">
+        <input type="text" id="specialization" name="specialization" placeholder="Area of Specialization">
+        <input type="text" id="location" name="location" placeholder="Location">
+        <input type="text" id="address" name="address" placeholder="Address">
+        <input type="email" id="email" name="email" placeholder="Your Email">
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+        <textarea id="about" name="about" placeholder="About You" rows="4"></textarea>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <div id="skillsContainer"></div>
+            <button type="button" id="addSkill">Add Skill</button>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div id="educationContainer"></div>
+            <button type="button" id="addEducation">Add Education</button>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            <div id="experienceContainer"></div>
+            <button type="button" id="addExperience">Add Experience</button>
+        </div>
+
+        <div class="section">
+            <h2>Other Courses / Certifications</h2>
+            <div id="coursesContainer"></div>
+            <button type="button" id="addCourse">Add Course</button>
+        </div>
+
+        <button type="submit">Submit</button>
+        <!-- Dashboard button -->
+        <a href="../frontend/dashboard/index.html" class="dashboard-button">Dashboard</a>
+    </form>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const imageUpload = document.getElementById('imageUpload');
+    const profilePhoto = document.getElementById('profilePhoto');
+
+    imageUpload.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                profilePhoto.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    const addSkillButton = document.getElementById('addSkill');
+    const skillsContainer = document.getElementById('skillsContainer');
+    addSkillButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        const newSkillInput = document.createElement('input');
+        newSkillInput.type = 'text';
+        newSkillInput.name = 'skills[]';
+        newSkillInput.placeholder = 'Skill';
+        skillsContainer.appendChild(newSkillInput);
+    });
+
+    const addEducationButton = document.getElementById('addEducation');
+    const educationContainer = document.getElementById('educationContainer');
+    addEducationButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        const div = document.createElement('div');
+        div.className = 'education-input';
+        div.innerHTML = `<input type="text" name="educationInstitution[]" placeholder="Institution Name">
+                         <input type="text" name="educationCourse[]" placeholder="Course Studied">
+                         <input type="text" name="educationStartYear[]" placeholder="Start Year">
+                         <input type="text" name="educationEndYear[]" placeholder="End Year">
+                         <button type="button" class="remove-button">Remove</button>`;
+        educationContainer.appendChild(div);
+    });
+
+    const addExperienceButton = document.getElementById('addExperience');
+    const experienceContainer = document.getElementById('experienceContainer');
+    addExperienceButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        const div = document.createElement('div');
+        div.className = 'experience-input';
+        div.innerHTML = `<input type="text" name="experienceInstitution[]" placeholder="Institution Name">
+                         <input type="text" name="experienceLocation[]" placeholder="Location">
+                         <input type="text" name="experienceRole[]" placeholder="Role Played">
+                         <button type="button" class="remove-button">Remove</button>`;
+        experienceContainer.appendChild(div);
+    });
+
+    const addCourseButton = document.getElementById('addCourse');
+    const coursesContainer = document.getElementById('coursesContainer');
+    addCourseButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        const div = document.createElement('div');
+        div.className = 'course-input';
+        div.innerHTML = `<input type="text" name="courseName[]" placeholder="Course Name">
+                         <input type="text" name="courseInstitution[]" placeholder="Institution">
+                         <input type="text" name="courseYear[]" placeholder="Year of Completion">
+                         <button type="button" class="remove-button">Remove</button>`;
+        coursesContainer.appendChild(div);
+    });
+
+    // Remove button functionality
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('remove-button')) {
+            const parentSection = event.target.parentNode;
+            parentSection.parentNode.removeChild(parentSection);
+        }
+    });
+
+    function handleSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Collect form data
+    const formData = new FormData(document.querySelector('form'));
+
+    // Send form data to the backend server
+    fetch('http://127.0.0.1:2345/api/submit-form', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+        console.log(data); // Log the response from the server
+        // Optionally, redirect the user or show a success message
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+        // Optionally, show an error message to the user
+    });
+}
+
+// Add event listener to the form submit event
+document.querySelector('form').addEventListener('submit', handleSubmit);
+});
+</script>
 </body>
 </html>
