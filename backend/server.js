@@ -1,9 +1,11 @@
 import express from 'express'
-// import bodyParser from 'body-parser';
+import path from 'path'
 import envs from './utils/dotenv.js'
 import client from './utils/mongo.js'
 import RedisClient from './utils/redis.js'
 import logger from './utils/logger.js'
+import __dirname from './utils/path.js'
+import upload, { uploadRoot } from './utils/upload.js'
 import authRoutes from './routes/authRoutes.js'
 import welcomeRoutes from './routes/welcome.js'
 import error404 from './routes/404Route.js'
@@ -15,7 +17,10 @@ const app = express()
 // app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json());
 app.use(express.json())
-app.use(helmet())
+app.use(helmet({ contentSecurityPolicy: false, crossOriginResourcePolicy: { policy: 'cross-origin' } }))
+
+app.use('/uploads', express.static(uploadRoot))
+app.use(express.static(path.join(__dirname, '../frontend')))
 const port = process.env.SERVER_PORT
 const type = process.env.CONTEXT
 if (!app || !port || !type) {
@@ -33,11 +38,7 @@ app.use(welcomeRoutes)
 // Auth routes
 app.use(authRoutes)
 
-// TODO: the frontend submits multipart/form-data including a profilePicture
-// file. Add multer middleware to parse multipart bodies and persist the file.
-// Without multer, req.body is empty for multipart requests and the route
-// will only work if the client sends application/json.
-app.post('/api/submit-form', async (req, res) => {
+app.post('/api/submit-form', upload.single('profilePicture'), async (req, res) => {
   try {
     const toArray = v => Array.isArray(v) ? v : (v ? [v] : []);
     const splitCsv = v => (typeof v === 'string' ? v.split(',').map(s => s.trim()).filter(Boolean) : toArray(v));
@@ -51,6 +52,7 @@ app.post('/api/submit-form', async (req, res) => {
       email: req.body.email,
       phone: req.body.phone,
       about: req.body.about,
+      profilePicture: req.file ? `/uploads/profile-photos/${req.file.filename}` : undefined,
       skills: splitCsv(req.body.skills || req.body['skills[]']),
       education: toArray(req.body['educationInstitution[]']).map((institution, i) => ({
         institution,
