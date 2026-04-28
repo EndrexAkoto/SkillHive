@@ -41,7 +41,7 @@ class authController {
       if (!user) {
         return res.status(400).json({ message: 'Invalid email or password' });
       }
-      if (!user.comparePassword(req.body.password)) {
+      if (!(await user.comparePassword(req.body.password))) {
         return res.status(400).json({ message: 'Invalid email or password' });
       }
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
