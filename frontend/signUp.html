@@ -13,27 +13,26 @@
     <div data-include="./partials/navbar.html"></div>
   </header>
 
-  <!-- form -->
-  <form class="w-25 border p-3 container mt-5" onSubmit="handleSubmit(event)">
+  <form id="signupForm" class="w-25 border p-3 container mt-5">
     <h5 class="text-center mb-4 h5">Sign Up</h5>
     <div class="mb-3">
-      <label for="exampleInputFirstName" class="form-label">First Name</label>
-      <input type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp">
+      <label for="firstName" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="firstName">
     </div>
     <div class="mb-3">
-      <label for="exampleInputLastName" class="form-label">Last Name</label>
-      <input type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="lastName">
     </div>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email</label>
-      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email">
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <label for="password" class="form-label">Password</label>
       <input type="password" class="form-control" id="password">
     </div>
     <div class="mb-3">
-      <label for="exampleInputConfirmPassword1" class="form-label">Confirm Password</label>
+      <label for="repeatPassword" class="form-label">Confirm Password</label>
       <input type="password" class="form-control" id="repeatPassword">
     </div>
     <div class="mb-3 form-check">
@@ -42,51 +41,30 @@
     <button type="submit" class="btn btn-primary">Sign Up</button>
   </form>
 
-  <script>
-    function handleSubmit(event) {
-      event.preventDefault(); // Prevent default form submission
-  
-      // Retrieve email and password values from the form
-      const firstName = document.getElementById('firstName').value;
-      const lastName = document.getElementById('lastName').value;
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      const repeatPassword = document.getElementById('repeatPassword').value;
-
-      if (!firstName || !lastName || !email || !password){ alert('Missing input');}
-      else if (!firstName){ alert('Please enter fisrt Name');}
-      else if (!lastName){ alert('Please enter Last Name');}
-      else if (!email){ alert('Please enter email');}
-      else if (!password) {alert('Please enter password');}
-      else if (!repeatPassword) {alert('Please repeat password')}
-      else if (password !== repeatPassword) {alert('Passwords do not match')}
-      else {  
-        // Perform fetch request here
-        fetch('http://127.0.0.1:2345/api/auth/register', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            firstName,
-            lastName,
-            email,
-            password
-          })
-        })
-        .then(response => {
-          if (response.status === 200) {
-            alert(response.message);
-            return;
-          };
-        })
-        .catch(error => {
-          alert(error.message);
-        });
-      }
-    }
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <script src="./scripts/include.js"></script>
+  <script src="./scripts/app.js"></script>
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const repeatPassword = document.getElementById('repeatPassword').value;
+        if (!firstName) return alert('Please enter first name');
+        if (!lastName) return alert('Please enter last name');
+        if (!email) return alert('Please enter email');
+        if (!password) return alert('Please enter password');
+        if (!repeatPassword) return alert('Please repeat password');
+        if (password !== repeatPassword) return alert('Passwords do not match');
+        try {
+            await SkillHive.auth.register({ firstName, lastName, email, password });
+            window.location.href = './login.html';
+        } catch (err) {
+            alert(err.message);
+        }
+    });
+  </script>
 </body>
 </html>
