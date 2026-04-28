@@ -1,0 +1,333 @@
+/* ============================================================
+   SkillHive — consolidated stylesheet
+   Replaces: main.css, index.css, present.css, style.css
+
+   Sections:
+     1. Base & typography
+     2. Navbar
+     3. Hero
+     4. Layout helpers (flex / containers / sections)
+     5. Feature blocks (numbered topic rows)
+     6. Buttons & links
+     7. Services grid ("Find Talents")
+     8. Team
+     9. Footer
+    10. Utilities
+   ============================================================ */
+
+
+/* ---------- 1. Base & typography ---------- */
+
+body {
+    font-family: "Bai Jamjuree", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: black;
+}
+
+a:active {
+    border-radius: 5px;
+    color: #ffffff !important;
+    background-color: #f56363 !important;
+}
+
+li {
+    padding: 5px;
+    color: black;
+}
+
+
+/* ---------- 2. Navbar ---------- */
+
+.navbar {
+    background-color: #ffffff !important;
+}
+
+.navbar.overall {
+    background-color: #0ddc25;
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 60px;
+}
+
+.navbar-nav {
+    margin-left: 450px;
+}
+
+.logo {
+    width: 100px;
+}
+
+
+/* ---------- 3. Hero ---------- */
+
+#hero {
+    background-image: url('../images/navbar.png');
+    background-size: cover;
+    height: 39.125rem;
+}
+
+
+/* ---------- 4. Layout helpers ---------- */
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}
+
+.recal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.hills {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.row {
+    margin-top: 50px !important;
+    font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
+}
+
+.section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-top: 50px;
+}
+
+.container3 {
+    margin-top: 70px;
+}
+
+.bg-lightgray {
+    background-color: rgb(240, 239, 239);
+    background-size: cover;
+}
+
+.plank {
+    background-color: rgb(240, 240, 240);
+    padding-top: 5px;
+    padding-bottom: 40px;
+}
+
+
+/* ---------- 5. Feature blocks (numbered topic rows) ---------- */
+
+.but1 {
+    border-radius: 100%;
+    background-color: rgb(236, 86, 111);
+    border: 0;
+    padding: 5px 20px;
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+    align-content: center;
+}
+
+.text1 {
+    margin-left: 60px;
+    align-self: center;
+    margin-top: 90px;
+}
+
+.pix1 {
+    margin-top: 90px;
+}
+
+.pix2 {
+    margin-left: 100px;
+}
+
+.Awesome {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.prof {
+    font-family: 'Crete Round', serif;
+}
+
+
+/* ---------- 6. Buttons & links ---------- */
+
+.but {
+    background-color: brown;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    margin-left: 80px;
+    margin-top: 30px;
+}
+
+.tribe {
+    color: white !important;
+    background-color: crimson;
+    padding: 6px 25px;
+    font-size: 13px;
+    border: none;
+}
+
+.tribe:hover {
+    background-color: black;
+    color: white;
+}
+
+.tribe1 {
+    padding: 10px 30px;
+    background-color: rgb(196, 42, 42);
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-family: sans-serif;
+}
+
+.tribe1:hover {
+    background-color: black;
+    color: white;
+    margin-left: auto;
+}
+
+.yelp {
+    border: 2px solid rgb(221, 217, 217) !important;
+    border-radius: 15px;
+    background-color: rgb(211, 211, 211);
+}
+
+.yelp:hover {
+    background-color: pink;
+    border: 2px solid crimson !important;
+}
+
+.linked a,
+.team_socials a {
+    text-decoration: none;
+}
+
+.learn a {
+    list-style: none;
+    text-decoration: none !important;
+}
+
+.Learn {
+    color: rgb(236, 86, 111);
+}
+
+
+/* ---------- 7. Services grid ---------- */
+
+.funfacts {
+    color: rgb(73, 73, 73);
+}
+
+
+/* ---------- 8. Team ---------- */
+
+.our {
+    text-align: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    color: gray;
+}
+
+.col {
+    color: gray;
+    text-align: center;
+}
+
+.team {
+    border-radius: 100px;
+    height: 100px;
+}
+
+.slant {
+    font-family: 'Crete Round', serif;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.pic {
+    height: 20px;
+    width: 20px;
+}
+
+.social {
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+
+/* ---------- 9. Footer ---------- */
+
+.footer-down,
+.bg-dark {
+    font-size: 15px;
+    background-color: rgb(5, 14, 15);
+}
+
+.cold {
+    line-height: 60px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.list-type {
+    list-style: none;
+    line-height: 35px;
+    padding: 0;
+}
+
+.list-type li {
+    margin-bottom: 10px;
+}
+
+.list-type a {
+    color: rgb(5, 14, 15);
+}
+
+
+/* ---------- 10. Utilities ---------- */
+
+form {
+    margin: 120px !important;
+    padding: 0 !important;
+}
+
+.style {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.hi {
+    text-align: end;
+    border: none;
+}
+
+.resize {
+    height: 30px;
+    width: 90px;
+    padding: 2px;
+}
+
+.ripe {
+    margin-top: 10px;
+}
+
+.day {
+    height: 35px;
+    width: 35px;
+    padding: 6px;
+}
