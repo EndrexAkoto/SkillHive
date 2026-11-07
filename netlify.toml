@@ -1,0 +1,12 @@
+# Netlify deploys the static frontend straight from the repo.
+# No build step: the site is plain HTML, CSS and JS under frontend/.
+[build]
+  publish = "frontend"
+  command = ""
+
+# Partials (navbar/footer) are fetched at runtime by scripts/include.js,
+# so they must stay served as-is next to the pages.
+[[headers]]
+  for = "/partials/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
