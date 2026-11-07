@@ -51,8 +51,10 @@ li {
 }
 
 .navbar-brand img {
-    width: 40px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-right: 0.4rem;
 }
 
 .navbar-nav {
@@ -66,9 +68,6 @@ li {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.logo {
-    width: 100px;
-}
 
 
 /* ---------- 3. Hero ---------- */
@@ -207,29 +206,34 @@ li {
     align-content: center;
 }
 
-.text1 {
-    margin-left: 60px;
-    align-self: center;
-    margin-top: 90px;
+#features .row {
+    align-items: center;
+    margin-top: 4rem !important;
 }
 
-.pix1 {
-    margin-top: 90px;
-    width: 80%;
-    height: auto;
+.text1,
+.text2 {
+    padding: 0 1rem;
 }
 
+.pix1,
 .pix2 {
-    margin-left: 100px;
-    width: 60%;
+    display: block;
+    width: 100%;
+    max-width: 520px;
     height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
-/* Columns stack below the xl breakpoint; drop the desktop-only offsets there */
 @media (max-width: 1199.98px) {
-    .text1,
+    /* columns stack: image sits under its text with a little breathing room */
+    .pix1,
     .pix2 {
-        margin-left: 0;
+        margin-top: 1.5rem;
     }
 }
 
@@ -341,6 +345,10 @@ li {
 
 .funfacts .fa {
     font-size: 40px;
+}
+
+.funfacts .row {
+    margin-top: 0 !important;
 }
 
 
