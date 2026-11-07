@@ -15,3 +15,7 @@ config.js
 # Ignore uploaded files
 backend/uploads/
 
+
+# Ignore every env variant (.env.developments, .env.productions, .env.stages, ...)
+.env.*
+!.env.example
