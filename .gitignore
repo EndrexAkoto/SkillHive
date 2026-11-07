@@ -19,3 +19,7 @@ backend/uploads/
 # Ignore every env variant (.env.developments, .env.productions, .env.stages, ...)
 .env.*
 !.env.example
+
+# Build output and runtime logs
+dist/
+backend/logs/
