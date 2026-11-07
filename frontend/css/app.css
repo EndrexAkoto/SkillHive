@@ -74,7 +74,7 @@ li {
 /* ---------- 3. Hero ---------- */
 
 #hero {
-    background-image: url('../images/navbar.png');
+    background-image: url('../images/navbar.jpg');
     background-size: cover;
     height: 39.125rem;
 }
@@ -133,6 +133,8 @@ li {
 /* ---------- 5. Feature blocks (numbered topic rows) ---------- */
 
 .but1 {
+    display: inline-block;
+    margin-bottom: 1.5rem;
     border-radius: 100%;
     background-color: rgb(236, 86, 111);
     border: 0;
@@ -151,10 +153,22 @@ li {
 
 .pix1 {
     margin-top: 90px;
+    width: 80%;
+    height: auto;
 }
 
 .pix2 {
     margin-left: 100px;
+    width: 60%;
+    height: auto;
+}
+
+/* Columns stack below the xl breakpoint; drop the desktop-only offsets there */
+@media (max-width: 1199.98px) {
+    .text1,
+    .pix2 {
+        margin-left: 0;
+    }
 }
 
 .Awesome {
@@ -224,6 +238,10 @@ li {
     text-decoration: none;
 }
 
+.team_socials a {
+    padding-left: 10px;
+}
+
 .learn a {
     list-style: none;
     text-decoration: none !important;
@@ -236,8 +254,31 @@ li {
 
 /* ---------- 7. Services grid ---------- */
 
+.services-icon {
+    width: 70px;
+    height: 70px;
+}
+
+.intro-quote {
+    font-family: 'Californian FB', Georgia, serif;
+    font-style: italic;
+    font-size: larger;
+    color: rgb(82, 75, 75);
+}
+
+.portrait {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
 .funfacts {
     color: rgb(73, 73, 73);
+}
+
+.funfacts .fa {
+    font-size: 40px;
 }
 
 
@@ -256,8 +297,10 @@ li {
 }
 
 .team {
-    border-radius: 100px;
+    width: 100px;
     height: 100px;
+    border-radius: 100px;
+    object-fit: cover;
 }
 
 .slant {
