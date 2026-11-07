@@ -14,11 +14,28 @@
 </head>
 
 <body>
-<div class="container-fluid p-0" id="home">
+<div data-include="./partials/navbar.html"></div>
+
+<header id="home">
     <section id="hero">
-        <div data-include="./partials/navbar.html"></div>
+        <div class="container hero-inner">
+            <div class="row align-items-center">
+                <div class="col-lg-7 hero-copy">
+                    <p class="hero-eyebrow">Your creative hub</p>
+                    <h1 class="hero-title">Build your portfolio</h1>
+                    <p class="hero-lead">Show your front-end, back-end, design, data and cloud work in one place, and get found by the people hiring for it.</p>
+                    <div class="hero-actions">
+                        <a href="./signUp.html" class="btn btn-primary btn-lg">Get started</a>
+                        <a href="#services" class="btn btn-outline-light btn-lg">Explore talents</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <img src="./images/hero-laptop.jpg" width="720" height="720" alt="Hands typing on a laptop beside a cup of coffee" class="hero-img" fetchpriority="high">
+                </div>
+            </div>
+        </div>
     </section>
-</div>
+</header>
 
 <!-- Numbered topic rows -->
 <section id="features">
