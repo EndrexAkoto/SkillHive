@@ -58,7 +58,6 @@ li {
 }
 
 .navbar-nav {
-    margin-left: 450px;
     display: flex;
     align-items: center;
 }

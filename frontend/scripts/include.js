@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const res = await fetch(url);
             if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
             el.outerHTML = await res.text();
+            document.querySelectorAll('[data-year]').forEach((y) => { y.textContent = new Date().getFullYear(); });
         } catch (err) {
             console.error('[include]', err);
         }
